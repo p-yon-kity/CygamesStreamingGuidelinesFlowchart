@@ -1,0 +1,217 @@
+@startuml
+' Copyright 2020 @p_yon_kity (twitter ID)
+' MIT License
+
+' 本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。これには、ソフトウェアの複製を使用、複写、変更、結合、掲載、頒布、サブライセンス、および/または販売する権利、およびソフトウェアを提供する相手に同じことを許可する権利も無制限に含まれます。
+
+' ソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、商品性、特定の目的への適合性、および権利非侵害についての保証も含みますが、それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。 -->
+
+skinparam defaultFontSize Meiryo UI
+skinparam defaultFontSize 24
+skinparam activityArrowFontSize 22
+
+
+
+
+title
+
+
+
+= Cygamesゲームコンテンツをプレイする際の配信ガイドライン
+= フローチャート
+
+====== ※このフローチャートは、2020/11/15時点で 株式会社Cygames様より
+====== 公開されている配信ガイドラインを基に個人が解釈したものです。
+====== 詳細は必ず公開されている原文をご確認ください。
+====== https://www.cygames.co.jp/streaming_guidelines/
+====== 作者は本文書の扱いによる一切の請求、損害、その他の義務について何らの責任も負わないものとします。
+
+
+endtitle
+
+' レーン定義
+
+
+|#lightgray|ガイドライン対象外|
+|#AliceBlue|Main|
+
+start
+
+
+partition タイトル・プラットフォーム {
+
+    |Main|
+    if (**日本国内の投稿者である**) then (日本国内)
+        -[#blue]->
+    else (日本国外)
+        |ガイドライン対象外|
+        #lightgray:ガイドライン対象外;
+        detach
+    endif
+
+    |Main|
+    if (
+**配信するタイトルが以下の何れかである**
+- グランブルーファンタジー
+- グランブルーファンタジー ヴァーサス
+- 神撃のバハムート
+- プリンセスコネクト！Re:Dive
+- Shadowverse
+- シャドウバース チャンピオンズバトル
+- ワールドフリッパー
+) then (YES)
+        -[#blue]->
+    else (NO)
+        |ガイドライン対象外|
+        #lightgray:ガイドライン対象外;
+        detach
+    endif
+
+    |Main|
+    if (
+**配信プラットフォームが以下である**
+- Mildom
+        ) then (YES)
+            -[#blue]->
+            |ガイドライン対象外|
+            #lightgray:ガイドライン対象外;
+            #pink:**他規約と合わせ、明確に配信投稿禁止**;
+            detach
+    else (NO)
+    endif
+
+    |Main|
+
+}
+
+(1)
+
+detach
+
+(1)
+partition 収益化関連 {
+
+
+    if (**収益化を行う**) then (行う)
+        -[#blue]->
+        if (
+
+**収益化プログラムシステムが以下の何れかである**
+- YouTube : YouTubeパートナープログラム
+- Facebook : Facebookゲームストリーマー、Facebookレベルアッププログラム
+- ニコニコ動画・ニコニコ生放送 : クリエイター奨励プログラム、ニコニコチャンネル
+- TwitCasting : ツイキャス・マネタイズの動画収益（β）、アイテム収益
+- Mirrativ : ギフト
+- OPENREC.tv : OPENRECクリエイターズプログラム
+
+        ) then (YES)
+        -[#blue]->
+            if (
+**コラボレーションした作品の要素を含む**
+- キャラクター
+- イラスト
+- 楽曲
+- 音楽データ
+            ) then (YES)
+                -[#blue]->
+                |ガイドライン対象外|
+                #lightgray:ガイドライン対象外;
+                detach
+            endif
+        endif
+
+    else (行わない)
+    endif
+
+}
+|Main|
+(2)
+
+detach
+|Main|
+(2)
+
+partition プリコネ関連 {
+
+    if (**配信タイトルが「プリンセスコネクト ReDive」である**) then (YES)
+        -[#blue]->
+        if (
+
+**配信プラットフォームが以下である**
+- YouTube
+- Facebook
+- ニコニコ動画＆生放送
+- Mirrativ
+- OPENREC.tv
+- TwitCasting
+
+        ) then (YES)
+        -[#blue]->
+        else (NO)
+
+            if (
+
+**動画にBGMを含む**
+※ BGMオフの場合は含まれていないと解釈
+
+            ) then (含む)
+                -[#blue]->
+                |ガイドライン対象外|
+                #lightgray:ガイドライン対象外;
+                detach
+            else (含まない)
+            endif
+        endif
+    else (NO)
+    endif
+
+}
+
+|Main|
+(3)
+
+detach
+|Main|
+(3)
+
+partition 動画への工夫等 {
+    if (**動画時間が2分30秒以下である**) then (YES-[2分30秒以下])
+        -[#blue]->
+
+    else (NO-[2分31秒以上])
+        if (
+
+**動画に創作性があるか**
+- 実況音声やコメント等の追加
+
+**以下は創作性を認めない例**
+- 取り込んだ動画をそのまま投稿したもの
+- 他社が投稿した動画の転載
+- イラストやムービー、音楽などの鑑賞を主目的としたもの
+
+        ) then (YES)
+        -[#blue]->
+        else (NO)
+            |ガイドライン対象外|
+            #lightgray:ガイドライン対象外;
+            detach
+        endif
+    endif
+
+    |Main|
+
+    if (**対象タイトル内で別途指定されている配信禁止区間の投稿を含む**) then (YES-含む)
+        -[#blue]->
+        |ガイドライン対象外|
+        #lightgray:ガイドライン対象外;
+        detach
+    else (NO-含まない)
+    endif
+
+}
+
+|Main|
+#lightgreen:配信・投稿・収益化を明示的に許可;
+
+stop
+@enduml
