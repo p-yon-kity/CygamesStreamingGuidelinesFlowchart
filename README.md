@@ -1,0 +1,2 @@
+# CygamesStreamingGuidelinesFlowchart
+Cygamesゲーム配信ガイドラインをフローチャートで表現
